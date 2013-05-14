@@ -37,15 +37,15 @@ while [[ -z $STOP ]]; do
   echo $DATE: $PROG: $TITLE >> $TMPFILE
 
   #kill time wasters
-  if [[ ("$TITLE" =~ "Iceweasel") || ("$PROG" =~ "firefox") ]]; then
-    if [[ "$TITLE" =~ www\.reddit\.com|spiegel\.de|www\.heise\.de|www\.cracked\.com|deviantart\.com|rerefefe\.netaction\.de|blog\.refefe\.de|blog\.fefe\.de ]]; then 
-    TIME=`date | grep -oE [0-9]+: | head -1`
-    if [[ ($TIME != "23:") && ($TIME != "11:")  ]]; then
-      killall firefox-bin; 
-      sudo -u firefox killall firefox-bin;  
-    fi
-  fi
-  fi
+#  if [[ ("$TITLE" =~ "Iceweasel") || ("$PROG" =~ "firefox") ]]; then
+#    if [[ "$TITLE" =~ www\.reddit\.com|spiegel\.de|www\.heise\.de|www\.cracked\.com|deviantart\.com|rerefefe\.netaction\.de|blog\.refefe\.de|blog\.fefe\.de ]]; then 
+#    TIME=`date | grep -oE [0-9]+: | head -1`
+#    if [[ ($TIME != "23:") && ($TIME != "11:")  ]]; then
+#      killall firefox-bin; 
+#      sudo -u firefox killall firefox-bin;  
+#    fi
+#  fi
+#  fi
 
   #wait for next interval
 
