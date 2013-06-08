@@ -1,0 +1,10 @@
+
+[Desktop Entry]
+Type=Application
+Exec=/home/benito/hg/programs/system/watcher/watcher.sh
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name[de_DE]=watcher
+Name=watcher
+Comment[de_DE]=
+Comment=

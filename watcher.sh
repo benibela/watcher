@@ -6,10 +6,11 @@
 
 #configuration options:
 
-TMPFILE=/ramdisk/curwatch
 RESFILE=`date  +"/home/benito/hg/programs/system/watcher/records/%F_%T"`
+TMPFILE=/ramdisk/curwatch
 LOOPS=30
 #10*60/20
+GPGKEYNAME=benito_local
 
 
 if [ -f $RESFILE ]; then echo $RESFILE exists;  exit; fi
@@ -57,13 +58,13 @@ while [[ -z $STOP ]]; do
 
   if [[ $i -gt $LOOPS ]]; then
     #echo crypted
-    gpg -e -r benito_local --output $RESFILE.TMP < $TMPFILE
+    gpg -e -r $GPGKEYNAME --output $RESFILE.TMP < $TMPFILE
     mv $RESFILE.TMP $RESFILE
     i=0
   fi
 
 done
 
-gpg -e -r benito_local --output $RESFILE.TMP < $TMPFILE
+gpg -e -r $GPGKEYNAME --output $RESFILE.TMP < $TMPFILE
 mv $RESFILE.TMP $RESFILE
 
